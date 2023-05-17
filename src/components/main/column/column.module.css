@@ -1,0 +1,36 @@
+.column {
+    background-color: #EBECF0;
+    border-radius: 10px;
+    padding: 12px;
+    box-sizing: border-box;
+    width: 280px;
+    min-height: 200px;
+}
+
+.card {
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.button {
+    border: none;
+    background-color: transparent;
+    color: #5E6C84;
+    cursor: pointer;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.taskLink {
+    text-decoration: none;
+    color: black;
+}
+
+.taskLink:hover {
+    text-decoration: underline;
+}

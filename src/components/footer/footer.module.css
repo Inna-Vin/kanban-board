@@ -1,0 +1,25 @@
+/* @font-face {
+    font-family: 'Roboto';
+    src: url('../header/Roboto-Regular.ttf');
+} */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0067A3;
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.tasks {
+    display: flex;
+
+}

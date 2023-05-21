@@ -15,7 +15,7 @@ function FormAddNewTask (props) {
 		}
 	}
 
-    const handleChange = e => {
+     const handleChange = e => {
 		const fieldName = e.target.name
 		setValues({...values, [fieldName]: e.target.value})
 	}
@@ -25,7 +25,7 @@ function FormAddNewTask (props) {
             <input className={css.card} name='title' placeholder='add new task' type='text' value={values.title} onChange={handleChange}/>
 
             {values.title ?  (
-                <button type='submit'>Submit</button>
+                <button className={css.submit} type='submit'>Submit</button>
             ) : (
                 <p className={css.valid}>enter tasks..</p>
             )}

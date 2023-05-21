@@ -18,7 +18,7 @@
 			"title": "Add user section to settings ",
 			"description": "There should be a user section in setting where users can edit their profile data: name, phone, email, etc.",
 			"created": "2021-09-27T11:13:57.611Z",
-			"status": "backlog"
+			"status": "inProgress"
 	},
 	{
 			"id": "15694889400239302",
@@ -33,5 +33,20 @@
 			"description": "Fetching data from server takes some time. We need to implement a loader so user can see that data fetching is in progress.",
 			"created": "2021-09-27T11:16:47.091Z",
 			"status": "finished"
-	}
+	},
+	{
+		"id": "45652229644491793",
+		"title": "Implementsas loader",
+		"description": "Fetchingas dsaata from server takes some time. We need to implement a loader so user can see that data fetching is in progress.",
+		"created": "2021-09-27T11:16:47.091Z",
+		"status": "finished"
+}, 
+{
+	"id": "45652229644441793",
+	"title": "Inhfy huuuan owcv",
+	"description": "Fetchingas dsaata from server takes some time. We need to implement a loader so user can see that data fetching is in progress.",
+	"created": "2021-09-27T11:16:47.091Z",
+	"status": "ready"
+}
+
 ]

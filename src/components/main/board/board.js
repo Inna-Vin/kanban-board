@@ -16,6 +16,7 @@ function Board(props) {
 
 		setTasks([...tasks, task]);
 	}
+    
 
     return (
         Object.values(LIST_TYPES).map(type => {
@@ -24,9 +25,11 @@ function Board(props) {
                 <Column
                     key={LIST_COPY[type]}
                     type={type}
-                    title={LIST_COPY[type]}
+                    status={LIST_COPY[type]}
                     tasks={listTasks || []}
                     addNewTask={addNewTask}
+                    noFiltredTasks={tasks}
+                    setTasks={setTasks}
                 />
             )
         })

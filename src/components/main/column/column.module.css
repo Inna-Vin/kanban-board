@@ -13,9 +13,11 @@
     margin-bottom: 15px;
     padding: 10px;
     box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.button {
+button {
     border: none;
     background-color: transparent;
     color: #5E6C84;
@@ -26,6 +28,21 @@
     line-height: 21px;
 }
 
+.addCard {
+    border: none;
+    border-radius: 5px;
+    margin: 5px 0;
+    background-color: #0079BF;
+    padding: 5px 10px;
+    color: #FFFFFF;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    cursor: pointer;
+}
+
 .taskLink {
     text-decoration: none;
     color: black;
@@ -33,4 +50,10 @@
 
 .taskLink:hover {
     text-decoration: underline;
+}
+
+.selectCard {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }

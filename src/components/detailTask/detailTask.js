@@ -5,7 +5,7 @@ import css from './detailTask.module.css';
 
 function DetailTask(props) {
     const { pathname } = useLocation()
-    const { tasks } = props
+    const { tasks, setTasks } = props
     const task = tasks.find(task => `/tasks/${task.id}` === pathname)
 
     const [values, setValues] = useState({
@@ -16,7 +16,11 @@ function DetailTask(props) {
 		const fieldName = e.target.name
 		setValues({...values, [fieldName]: e.target.value})
 	}
-   
+    
+    const saveDescription = () => {
+        task.description = values.description
+        setTasks([...tasks])
+    }
 
     return (
         <div className={css.wrapper}>
@@ -26,7 +30,7 @@ function DetailTask(props) {
             </div>
 
             <textarea className={css.description} name='description'  type='text' value={values.description} onChange={handleChange} placeholder='This task has no description'/>
-            <button className={css.save}>save</button>
+            <Link to='/' className={css.save} onClick={saveDescription}>save</Link>
         </div>
     )
 }

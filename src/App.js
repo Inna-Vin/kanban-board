@@ -7,8 +7,13 @@ import Footer from './components/footer/footer';
 import { useState } from 'react'
 
 function App() {
-
+  // const initialState = JSON.parse(window.localStorage.getItem('tasks')) || []
   const [tasks, setTasks] = useState(data)
+  
+	// useEffect(() => {
+	// 	window.localStorage.setItem('tasks', JSON.stringify(tasks))
+	// }, [tasks])
+
   return (
     <div className='wrapper'>
       <Router>

@@ -1,30 +1,30 @@
 import css from './select.module.css';
 import { LIST_TYPES } from '../../config';
-import { useState } from 'react';
 
 
 function Select(props) {
-    const { noFiltredTasks, type, setTasks } = props
+    const { noFiltredTasks, type, setTasks, handleSelectVisible } = props
 
-    // const [newStatus, setNewStatus] = useState(undefined)
+     const handleSelectChange = (e) => {
+        const updatedTask = noFiltredTasks.map(task => {
+            if (task.id === e.target.value) {
+                return { ...task, status: type }
+            } 
+            return task
+        })
+        setTasks(updatedTask)
+        handleSelectVisible(false)
+     }
 
-     const handleChange = (e) => {
-        const tasksId = e.target.value
-    //     const newStatus = e.target.name
-    //     const findTask = noFiltredTasks.find(task => task.id === tasksId)
-        
-    //     setNewStatus({...findTask, status: newStatus})
-
-	// 	setTasks(updatedTasks)
-    }
-   
     return (
-        <select className={css.select} onChange={handleChange} value={noFiltredTasks.status}>
+        <select key={noFiltredTasks} className={css.select} onChange={handleSelectChange}>
+
+            <option className={css.chooseTask}>choose task</option>
         
             {type === LIST_TYPES.READY && (
                 noFiltredTasks.filter(task => task.status === 'backlog').map(tasks => {
                     return (
-                        <option key={tasks} name='ready' value={tasks.id}>{tasks.title}</option>
+                        <option className={css.option} key={tasks.id} value={tasks.id}>{tasks.title}</option>
                     )}
                 ))
             }
@@ -32,7 +32,7 @@ function Select(props) {
             {type === LIST_TYPES.IN_PROGRESS && (
                 noFiltredTasks.filter(task => task.status === 'ready').map(tasks => {
                     return (
-                        <option key={tasks} name='inProgress' value={tasks.id}>{tasks.title}</option>
+                        <option className={css.option} key={tasks.id} value={tasks.id}>{tasks.title}</option>
                     )}
                 ))
             }
@@ -40,7 +40,7 @@ function Select(props) {
             {type === LIST_TYPES.FINISHED && (
                 noFiltredTasks.filter(task => task.status === 'inProgress').map(tasks => {
                     return (
-                        <option key={tasks} name='finished' value={tasks.id}>{tasks.title}</option>
+                        <option className={css.option} key={tasks.id} value={tasks.id}>{tasks.title}</option>
                     )}
                 ))
             }
@@ -48,11 +48,6 @@ function Select(props) {
         </select>
 
     )
-    
-
-    // {Object.values(LIST_TYPES).map(list => {
-    //     return <option key={list} value={list}>{LIST_COPY[list]}</option>
-    // })}
 }
 
 

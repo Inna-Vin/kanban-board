@@ -6,4 +6,21 @@
     color: black;
     padding: 10px;
     box-sizing: border-box;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.option {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.chooseTask {
+    color: #5E6C84;
 }

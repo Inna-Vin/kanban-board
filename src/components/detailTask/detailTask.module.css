@@ -46,4 +46,10 @@ textarea:focus {
     background-color: #0079BF;
     padding: 5px 10px;
     border-radius: 5px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.save:hover {
+    text-decoration: underline;
 }

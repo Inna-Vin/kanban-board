@@ -14,10 +14,16 @@
     padding: 10px;
     box-sizing: border-box;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
 }
 
-button {
+.cardTitle {
+    margin: 0;
+}
+
+.button {
     border: none;
     background-color: transparent;
     color: #5E6C84;
@@ -46,6 +52,7 @@ button {
 .taskLink {
     text-decoration: none;
     color: black;
+    
 }
 
 .taskLink:hover {

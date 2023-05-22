@@ -27,24 +27,36 @@ function Column(props) {
         setisSelectVisible(!isSelectVisible)
     }
 
+    const taskRemove = (e) => {
+        console.log(e.target.value)
+        const findTask = noFiltredTasks.find(task => task.id === e.target.value)
+        if (findTask) {
+            setTasks([...noFiltredTasks.filter(task => task !== findTask)])
+        }
+    }
+
     return (
        
         <div className={css.column}>
             <h3 className={css.header}>{status}</h3>
             {tasks.map(task => {
                 return (
-                    <Link to={`/tasks/${task.id}`} className={css.taskLink}>
-                        <div key={task.id} className={css.card}>{task.title}</div>
-                    </Link>
-                )
-            })}
+                    <div key={task.id} className={css.card}>
+                        <Link to={`/tasks/${task.id}`} className={css.taskLink}>
+                            <p className={css.cardTitle}>{task.title}</p>
+                        </Link>
+                        <button value={task.id} className={css.button} onClick={taskRemove}>&#10006;</button>
+                    </div>
+                    )
+                }
+            )}
 
             {type === LIST_TYPES.BACKLOG && isFormVisible && (
                 <FormAddNewTask formSubmit={formSubmit} />
             )}
             
-            {type === LIST_TYPES.BACKLOG &&
-                <button className={css.button} onClick={handleAddNewClick}>+ Add card</button>
+            {type === LIST_TYPES.BACKLOG && !isFormVisible &&
+                (<button className={css.button} onClick={handleAddNewClick}>+ Add card</button>)
             }
 
             <div className={css.selectCard}>
@@ -53,7 +65,7 @@ function Column(props) {
                 )}
 
                 {type !== LIST_TYPES.BACKLOG && 
-                    <button onClick={handleSelectVisible}> + Add card </button>
+                    <button  className={css.button} onClick={handleSelectVisible}> + Add card </button>
                 }
             </div>
         </div>           
